@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiXtream.Pages.RegisterPage"
-             Title="RegisterPage">
+             Title="RegisterPage"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout VerticalOptions="CenterAndExpand"
                  HorizontalOptions="FillAndExpand"
                  MaximumWidthRequest="360"
@@ -14,17 +15,28 @@
 
         <Label
             Text="Username" />
-        <Entry Placeholder="UserName" x:Name="txtUserName" />
+        <Entry Placeholder="UserName"
+               x:Name="txtUserName"
+               Text="{Binding UserName}" />
 
         <Label
             Text="Password" />
 
-        <Entry Placeholder="Password" x:Name="txtPassword" IsPassword="True" />
+        <Entry Placeholder="Password"
+               x:Name="txtPassword" IsPassword="True"
+               Text="{Binding Password}" />
 
-        <Label
+        <!--<Label
             Text="Confirm Password" />
 
-        <Entry Placeholder="Confirm Password" x:Name="txtConfirmPassword" IsPassword="True" />
+        <Entry Placeholder="Confirm Password" x:Name="txtConfirmPassword" IsPassword="True" />-->
+
+        <Label
+            Text="Server" />
+
+        <Entry Placeholder="Server"
+               x:Name="txtServer" 
+               Text="{Binding Server}" />
 
         <Button Text="Register" x:Name="btnRegister" Clicked="OnRegisterClicked" />
         <Button Text="Back" x:Name="btnBack" Clicked="OnBackClicked" />
